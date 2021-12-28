@@ -23,10 +23,10 @@ if __name__ == "__main__":
     for job in jobs:
         print(job.result())
 
-    print('.map method for multiprocessing')        
+    print('.map method for multiprocessing')
     # or, you can do it this way
     with ProcessPoolExecutor() as executor:
-        results = [r for r in executor.map(occupy, range(4))]
+        results = list(executor.map(occupy, range(4)))
 
     print(results)
 
